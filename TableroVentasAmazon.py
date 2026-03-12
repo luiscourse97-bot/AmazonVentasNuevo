@@ -49,7 +49,7 @@ if st.checkbox("📈 Ventas por Categoría"):
     col1, col2 = st.columns(2)
     
     with col1:
-        cat_revenue = df.groupby('product_category')['revenue'].sum().sort_values( descending=True)
+        cat_revenue = df.groupby('product_category')['revenue'].sum().sort_values(ascending=True)
         fig1 = px.bar(x=cat_revenue.index, y=cat_revenue.values, 
                       title="Ingresos por Categoría",
                       color=cat_revenue.values, color_continuous_scale='Viridis')
